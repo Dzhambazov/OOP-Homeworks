@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.Shape", "01.Shape\01.Shape.csproj", "{52A0BC9C-50F9-45F8-9014-39B2B73D693D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank", "Bank\Bank.csproj", "{1B6AB036-C191-4F41-AC0C-B2055A3FF4C1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52A0BC9C-50F9-45F8-9014-39B2B73D693D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52A0BC9C-50F9-45F8-9014-39B2B73D693D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52A0BC9C-50F9-45F8-9014-39B2B73D693D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52A0BC9C-50F9-45F8-9014-39B2B73D693D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B6AB036-C191-4F41-AC0C-B2055A3FF4C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B6AB036-C191-4F41-AC0C-B2055A3FF4C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B6AB036-C191-4F41-AC0C-B2055A3FF4C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B6AB036-C191-4F41-AC0C-B2055A3FF4C1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
