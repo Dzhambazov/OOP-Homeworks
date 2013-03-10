@@ -17,7 +17,7 @@ namespace Bank
             LoanAcc Arkada2012Loan = new LoanAcc(companyCustomer,100000,1.5M); 
             LoanAcc loanAcc = new LoanAcc(customer, 400, 0.8M);
 
-            Bank DjambazovBank = new Bank();
+            Bank DjambazovBank = new Bank("DjambazovBank", "Sofia, bul. Vitosha 20", "Sofia, bul. Evtimii 59");
             DjambazovBank.AddAccount(Arkada2012Deposit);
             DjambazovBank.AddAccount(Arkada2012Loan);
             DjambazovBank.AddAccount(loanAcc);
@@ -30,7 +30,8 @@ namespace Bank
             Console.WriteLine("Calc Interest Amount for 2 years");
             Console.WriteLine(Arkada2012Deposit.InterestAmount(24));
             Console.WriteLine();
-            Console.WriteLine("Print All accounts information");
+            Console.WriteLine("Print bank info");
+            Console.WriteLine();
             Console.WriteLine(DjambazovBank);
   
 

@@ -33,6 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="BankDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
