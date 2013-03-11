@@ -28,7 +28,7 @@ namespace BlackJack
             get
             {
                 int count = 0;
-                int acesCount = 0;
+                int acesCount = 0; // aces in player
                 foreach (var card in playerCards)
                 {
                     if (card.Value == 11)
@@ -38,23 +38,23 @@ namespace BlackJack
                     }
                     count += card.Value;
                 }
-                for (int i = 0; i < acesCount; i++)
+                for (int i = 0; i < acesCount; i++) // calc aces in the end cause ot their multiple value
                 {
                     if (count < 11)
                     {
-                        count += 11;
+                        count += 11; // here the ace has value of 11
                     }
                     else
                     {
-                        count += 1;
+                        count += 1; // here the ace has value of 1
                     }
                 }
                return this.playerCount = count;
             }
         }
 
-        //returns dealer count
-        public int DealerCount
+        //returns dealer's count
+        public int DealerCount       ////////////////////////////////// Problem here calc aces too, will be fixed
         {
             get
             {
@@ -67,6 +67,7 @@ namespace BlackJack
             }
         }
 
+        // Place bet
         public int PlaceBet(Player player)
         {
             int bet = 0;
@@ -74,13 +75,13 @@ namespace BlackJack
             {
                 Console.Write("Place your bet please: ");
                 bet = int.Parse(Console.ReadLine());
-                if (bet > player.Money)
+                if (bet > player.Money) // is the bet possible
                 {
                     Console.WriteLine("Not enough funds !");
                 }
                 else
                 {
-                    player.Money = player.Money - bet;
+                    player.Money = player.Money - bet; // player's balance - bet
                     return bet;
                 }
             }
@@ -88,6 +89,7 @@ namespace BlackJack
             return 0;
         }
 
+        //playing as many games as the player wants to play, while "exit" is typed it stops
         public void Game(Player player)
         {
             do
@@ -106,6 +108,7 @@ namespace BlackJack
             while(true);
         }
         
+        //one game cycle - could be played N number of times, player's balance is saved!
         public void StartGame(Player player)
         {
             int bet = PlaceBet(player);
@@ -185,12 +188,12 @@ namespace BlackJack
                     PlayerWins(player, bet, 2);
                 }
             }
-                playerCards.Clear();
-                dealerCards.Clear();
+                playerCards.Clear(); //clear player cards
+                dealerCards.Clear(); //clear dealer cards
                 
         }
 
-
+        // "Double" action  -  possible just one time after first two cards !
         public void DoubleAction(Player player)
         {
             if (playerCount < 21)
@@ -200,6 +203,8 @@ namespace BlackJack
                 Console.WriteLine("{0}: {1}", player.Alias, PlayerCount);
             }
         }
+
+        //Normal game (no double, no split)
         public void NormalAction(Player player, string act)
         {
             int counter = 0;

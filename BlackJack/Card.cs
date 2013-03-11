@@ -13,7 +13,7 @@ namespace BlackJack
         public CardSuit Suit { get; set; }
         private int value = 0;
 
-        public int Value
+        public int Value // each card has value in BJ, Ace could be 1 and 11
         {
             get
             {
