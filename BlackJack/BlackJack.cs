@@ -125,33 +125,27 @@ namespace BlackJack
             }
             else
             {
-                do
+                Console.WriteLine("Plase select  hit / double / stand");
+                string action = Console.ReadLine();
+                if (action == "double")
                 {
-                    if (this.playerCount < 21)
+                    if (player.Money >= bet)
                     {
-                        string action = Console.ReadLine();
-                        if (action == "deal")
-                        {
-                            DealPlayerCard();
-                            PrintCards(playerCards);
-                            Console.WriteLine("{0}: {1}", player.Alias, PlayerCount);
-                        }
-                        if (action == "stand")
-                        {
-                            break;
-                        }
-                    }
-                    else if (playerCount == 21)
-                    {
-                        break;
+                        player.Money -= bet;
+                        DoubleAction(player);
                     }
                     else
                     {
-                        Console.WriteLine("Busted !  You lost !");
-                        break;
+                        NormalAction(player, "hit");
                     }
+                    
                 }
-                while (true);
+                else
+                {
+                    NormalAction(player,action);
+                }
+
+
                 PrintCards(dealerCards);
                 Console.WriteLine("Dealer: {0}",DealerCount);
                 if (playerCount < 21)
@@ -186,10 +180,66 @@ namespace BlackJack
                     Console.WriteLine("Split !");
                     PlayerWins(player, bet, 2);
                 }
+                else if (playerCount == 21 && dealerCount != 21)
+                {
+                    PlayerWins(player, bet, 2);
+                }
             }
                 playerCards.Clear();
                 dealerCards.Clear();
                 
+        }
+
+
+        public void DoubleAction(Player player)
+        {
+            if (playerCount < 21)
+            {
+                DealPlayerCard();
+                PrintCards(playerCards);
+                Console.WriteLine("{0}: {1}", player.Alias, PlayerCount);
+            }
+        }
+        public void NormalAction(Player player, string act)
+        {
+            int counter = 0;
+            do
+            {
+                if (playerCount < 21)
+                {
+                    string action = "";
+                    if (counter == 0)
+                    {
+                        action = act;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Select your action hit / stand");
+                        action = Console.ReadLine();
+                    }
+                    if (action == "hit")
+                    {
+                        DealPlayerCard();
+                        PrintCards(playerCards);
+                        Console.WriteLine("{0}: {1}", player.Alias, PlayerCount);
+                    }
+                    if (action == "stand")
+                    {
+                        break;
+                    }
+                }
+                else if (playerCount == 21)
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Busted !  You lost !");
+                    break;
+                }
+                counter++;
+            }
+            while (true);
         }
 
         //player win
