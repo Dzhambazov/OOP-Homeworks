@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 
 namespace Bank
 {
-    class MortgageAcc : Account
+    class MortgageAcc : Account, IDepositable
     {
         public MortgageAcc(Customer customer, decimal balance, decimal interestRate)
             : base(customer,balance,interestRate)
         {
 
+        }
+
+        public void DepositMoney(decimal sum)
+        {
+            this.Balance += sum;
         }
 
         public override decimal InterestAmount(int months)

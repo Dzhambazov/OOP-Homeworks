@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bank
 {
-    class DepositAcc : Account
+    class DepositAcc : Account, IDepositable, IWithdrawable
     {
         public DepositAcc(Customer customer, decimal balance, decimal interestRate)
             : base(customer,balance,interestRate)
@@ -14,7 +14,12 @@ namespace Bank
 
         }
 
-        public override void WidthdrawMoney(decimal sum)
+        public void DepositMoney(decimal sum)
+        {
+            this.Balance += sum;
+        }
+
+        public void WithdrawMoney(decimal sum)
         {
             if (this.Balance >= sum)
             {

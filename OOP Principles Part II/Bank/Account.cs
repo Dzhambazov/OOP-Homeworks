@@ -19,16 +19,9 @@ namespace Bank
             this.InterestRate = interestRate;
         }
 
-        public void DepositMoney(decimal sum)
-        {
-            this.Balance += sum;
-        }
-
-        public virtual void WidthdrawMoney(decimal sum)
-        {
-
-        }
-
+         
+ 
+       
         public virtual decimal InterestAmount(int months)
         {
             if (months > 0)

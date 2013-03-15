@@ -10,7 +10,7 @@ namespace Bank
     {
         public static void Main()
         {
-            IndividualCustomer customer = new IndividualCustomer("Pesho Peshev");
+            IndividualCustomer customer = new IndividualCustomer("Pesho Peshev",26);
             CompanyCustomer companyCustomer = new CompanyCustomer("Arkada 2012");
 
             DepositAcc Arkada2012Deposit = new DepositAcc(companyCustomer,19000,1.2M);
@@ -24,7 +24,7 @@ namespace Bank
 
 
             Arkada2012Deposit.DepositMoney(18900);
-            Arkada2012Deposit.WidthdrawMoney(1499);
+            Arkada2012Deposit.WithdrawMoney(1499);
             loanAcc.DepositMoney(259);
 
             Console.WriteLine("Calc Interest Amount for 2 years");
@@ -33,6 +33,10 @@ namespace Bank
             Console.WriteLine("Print bank info");
             Console.WriteLine();
             Console.WriteLine(DjambazovBank);
+
+
+            // out ot funds
+            Arkada2012Deposit.WithdrawMoney(9999999);
   
 
         }
