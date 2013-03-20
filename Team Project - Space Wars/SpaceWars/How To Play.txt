@@ -1,0 +1,10 @@
+Left arrow - move left
+Right arrow - move right
+Space - shoot normal bullet
+Z - shoot left blaster
+X - shoot right blaster
+Enter - shoot rockets (mass damage cause of debrises)
+R - Nuclear Missle ( just one for the game, MASS DMG, use it against the boss)
+
+
+Boss produced on 220 points !
